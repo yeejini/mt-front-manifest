@@ -1,12 +1,10 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: mt-client
+  name: mt-client-deployment
   namespace: mt-front-nms
-  labels:
-    app: mt-client
 spec:
-  replicas: 3
+  replicas: 2
   selector:
     matchLabels:
       app: mt-client
@@ -15,36 +13,20 @@ spec:
       labels:
         app: mt-client
     spec:
+      serviceAccountName: mt-front-sa
       containers:
         - name: mt-client
-          image: kangyejini/k8s-front:test5   # 프론트 이미지
+          image: kangyejini/mt-front:test1
           imagePullPolicy: Always
-
           ports:
-            - containerPort: 3000               # Next.js 기본 포트
-
+            - containerPort: 3000
           envFrom:
             - configMapRef:
-                name: mt-client-config           # SERVER_URL 주입
-
-          readinessProbe:
-            httpGet:
-              path: /
-              port: 3000
-            initialDelaySeconds: 10
-            periodSeconds: 10
-
-          livenessProbe:
-            httpGet:
-              path: /
-              port: 3000
-            initialDelaySeconds: 20
-            periodSeconds: 20
-
+                name: mt-client-config
           resources:
             requests:
-              cpu: "100m"
-              memory: "128Mi"
+              cpu: "200m"
+              memory: "256Mi"
             limits:
               cpu: "500m"
-              memory: "256Mi"
+              memory: "512Mi"

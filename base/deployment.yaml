@@ -4,7 +4,6 @@ metadata:
   name: mt-client-deployment
   namespace: mt-front-nms
 spec:
-  replicas: 3
   selector:
     matchLabels:
       app: mt-client

@@ -16,7 +16,7 @@ spec:
       serviceAccountName: mt-front-sa
       containers:
         - name: mt-client
-          image: kangyejini/mt-front:test1
+          image: kangyejini/mt-front:5394ac95b4c4bd620e049856b8adf0f301534627
           imagePullPolicy: Always
           ports:
             - containerPort: 3000

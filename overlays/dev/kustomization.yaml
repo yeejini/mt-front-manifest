@@ -6,4 +6,4 @@ resources:
 
 images:
   - name: kangyejini/mt-front
-    newTag: 5394ac95b4c4bd620e049856b8adf0f301534627
+    newTag: 5d926152dccbe97d70dd259e39b5946ddec1d443

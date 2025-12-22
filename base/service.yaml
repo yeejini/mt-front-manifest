@@ -2,7 +2,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: mt-client-svc
-  namespace: mt-front-nms
+  namespace: ingress
 spec:
   selector:
     app: mt-client

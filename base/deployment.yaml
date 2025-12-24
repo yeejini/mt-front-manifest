@@ -4,6 +4,7 @@ metadata:
   name: mt-client-deployment
   namespace: ingress
 spec:
+  revisionHistoryLimit: 2
   selector:
     matchLabels:
       app: mt-client

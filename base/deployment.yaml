@@ -23,6 +23,8 @@ spec:
           envFrom:
             - configMapRef:
                 name: mt-client-config
+            - secretRef:
+                name: firebase-admin-secret
           resources:
             requests:
               cpu: "200m"
